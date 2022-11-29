@@ -2,7 +2,7 @@
   "name": "react-the-complete-guide",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://victoriiashtyreva.github.io/users_list.git",
+  "homepage": "https://victoriiashtyreva.github.io/users_list/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
@@ -13,7 +13,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
     "build": "react-scripts build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
