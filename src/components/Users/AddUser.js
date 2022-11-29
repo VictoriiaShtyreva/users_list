@@ -7,6 +7,7 @@ import Error from "../UI/Error.js";
 const AddUser = (props) => {
   const [enteredUserName, setEnteredUserName] = useState("");
   const [enteredAgeUser, setEnteredAgeUser] = useState("");
+  const [error, setError] = useState();
 
   const addUserHandler = (event) => {
     event.preventDefault(); // it prevents default actions that browsers make when an event is triggered;
@@ -14,10 +15,11 @@ const AddUser = (props) => {
     if (
       enteredUserName.trim().length === 0 ||
       enteredAgeUser.trim().length === 0
-    ) {
+    ) { setError({title: 'Invalid input', message: 'Please enter a valid name and age (non-empty values).'});
       return;
     }
     if (+enteredUserName < 1) {
+      setError({title: 'Invalid age', message: 'Please enter a valid age (more than 0).'})
       return;
     }
     props.onAddUser(enteredUserName, enteredAgeUser);
@@ -35,7 +37,7 @@ const AddUser = (props) => {
 
   return (
     <div>
-      <Error title="An error occured!" message="Something went wrong!" />
+      {error && <Error title={error.title} message={error.message} />}
       <Card className={styles.carduser}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
