@@ -4,7 +4,7 @@
 _____
 Implemented the following features:
 - :white_check_mark: User intereaction (using states);
-- :white_check_mark: Using CSS-in-JS (CSS-modules, styled components);
+- :white_check_mark: Using CSS-in-JS (CSS-modules);
 - :white_check_mark: Hosting GitHub pages.
 
 ## How it use:
